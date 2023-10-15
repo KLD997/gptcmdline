@@ -7,7 +7,7 @@ API_KEY_FILE=~/.orb/.openai-api-key
 if [ -f $API_KEY_FILE ]; then
     API_KEY=$(cat $API_KEY_FILE)
 else
-    echo "API key not found. Please create a file '$API_KEY_FILE' with your OpenAI API key."
+    echo "API key not found. Please add API Key to '$API_KEY_FILE'."
     exit 1
 fi
 
