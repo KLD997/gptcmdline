@@ -1,29 +1,5 @@
 #!/usr/local/bin/zsh
 
-# Function to check if a command is installed
-command_exists() {
-    command -v "$1" &> /dev/null
-}
-
-# Check if jq is installed, and if not, install it
-if ! command_exists "jq"; then
-    echo "jq is not installed. Installing..."
-
-    # FreeBSD
-    if command_exists "pkg"; then
-        doas pkg install jq
-    else
-        # Debian
-        if command_exists "apt-get"; then
-            sudo apt-get update
-            sudo apt-get install jq
-        else
-            echo "pkg or apt not found. Please install jq manually or using an appropriate package manager for your system."
-            exit 1
-        fi
-    fi
-fi
-
 # Prompt for the OpenAI API key securely
 echo "Please enter your OpenAI API key (it will not be displayed as you type):"
 read -rs API_KEY
