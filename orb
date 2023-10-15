@@ -1,10 +1,17 @@
 #!/usr/bin/zsh
 
-# Prompt for the OpenAI API key securely
-echo "Please enter your OpenAI API key (it will not be displayed as you type):"
-read -rs API_KEY
+# API key configuration file
+API_KEY_FILE=~/.orb/.openai-api-key
 
-# Hardcoded model ID for "babbage" as the chat model
+# Check if the API key file exists
+if [ -f $API_KEY_FILE ]; then
+    API_KEY=$(cat $API_KEY_FILE)
+else
+    echo "API key not found. Please create a file '$API_KEY_FILE' with your OpenAI API key."
+    exit 1
+fi
+
+# Model selection (you can modify this as needed)
 model_id="babbage-002"
 
 # Main loop
@@ -16,11 +23,25 @@ while true; do
         break
     fi
 
+    # Check for valid prompt (add more validation as needed)
+    if [ -z "$prompt" ]; then
+        echo "Prompt cannot be empty."
+        continue
+    fi
+
     response=$(curl -s -X POST "https://api.openai.com/v1/engines/$model_id/completions" -H "Authorization: Bearer $API_KEY" -H "Content-Type: application/json" -d '{
       "prompt": "'"$prompt"'",
-      "max_tokens": 150000
+      "max_tokens": 150
     }')
 
+    # Check if the API request was successful
+    if [ $? -ne 0 ]; then
+        echo "API request failed. Please check your configuration and try again."
+    else
+        echo "Response from ChatGPT $model_id:"
+        echo "$response"
+    fi
+done
     echo "Response from ChatGPT $model_id:"
     echo "$response"
 done
