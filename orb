@@ -1,4 +1,4 @@
-#!/usr/local/bin/zsh
+#!/usr/bin/zsh
 
 # Prompt for the OpenAI API key securely
 echo "Please enter your OpenAI API key (it will not be displayed as you type):"
