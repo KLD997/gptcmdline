@@ -88,3 +88,6 @@ mv orb /$HOME/.orb/
 mv LICENSE $HOME/.orb/
 mv README.md $HOME/.orb/
 mv install.sh $HOME/.orb/
+
+# Create OpenAI API Key file
+touch $HOME/.orb.openai-api-key
