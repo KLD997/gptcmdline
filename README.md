@@ -1,4 +1,4 @@
-# Open-Roaming-Byzn (ORB)
+# ORB
 ORB is a command-line script that connects to the OpenAI API to harness the power of ChatGPT models for generating human-like text responses. It's designed to provide a seamless interface for interacting with OpenAI's language models.
 
 ## UPDATE 10/15/2023
