@@ -1,5 +1,5 @@
-# ORB
-ORB is a command-line script that connects to the OpenAI API to harness the power of ChatGPT models for generating human-like text responses. It's designed to provide a seamless interface for interacting with OpenAI's language models.
+# GPTCMDLINE
+GOTCMDLINE is a command-line script that connects to the OpenAI API to harness the power of ChatGPT models for generating human-like text responses. It's designed to provide a seamless interface for interacting with OpenAI's language models.
 
 ## UPDATE 10/15/2023
 - Created separate `install.sh` for smoother install.
@@ -16,7 +16,7 @@ ORB allows you to securely input your OpenAI API key without displaying it on th
 It checks if the essential JSON processing tool `jq` is installed and if `zsh` is installed, and installs them if necessary, ensuring a smooth setup process.
 
 ### Chat with ChatGPT: 
-With ORB, you can engage in a conversation with the ChatGPT model using the "babbage" model ID. It's a versatile tool for various text generation tasks.
+With GPTCMDLINE, you can engage in a conversation with the ChatGPT model using the "babbage" model ID. It's a versatile tool for various text generation tasks.
 
 ### Exit Gracefully: 
 ORB is user-friendly and lets you exit the conversation by typing 'exit.'
@@ -45,9 +45,9 @@ jq (a JSON processor)
 ## Installation -- FreeBSD
 
 1. Clone this repository
-2. unzip orb-main.zip
-3. `cd` to orb-main
-4. Modify `orb` she-bang to `#!/usr/local/bin/zsh`
+2. unzip gptcmdline-main.zip
+3. `cd` to gotcmdline-main
+4. Modify `gptcmdline` she-bang to `#!/usr/local/bin/zsh`
 5. `chmod +x` install.sh
 6. run `./install.sh`
 
